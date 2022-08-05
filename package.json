@@ -35,6 +35,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "env-var": "^7.1.1",
     "log4js": "^6.6.1"
   }
 }
