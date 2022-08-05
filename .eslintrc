@@ -6,15 +6,20 @@
     "es2021": true
   },
   "extends": [
-    "google"
+    "google",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "pject": "./tsconfig.json"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "rules": {
+    "valid-jsdoc": "off",
+    "prettier/prettier": "warn"
   }
 }
