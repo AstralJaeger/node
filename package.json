@@ -1,6 +1,6 @@
 {
   "name": "node",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A node template project",
   "main": "index.js",
   "scripts": {
