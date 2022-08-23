@@ -3,7 +3,7 @@ MAINTAINER Felix Hillebrand <astraljaeger@pm.me>
 
 ENV NODE_ENV production
 
-RUN apk add dumb-init
+RUN apk add --no-cache tini
 
 WORKDIR /usr/src/app
 
@@ -14,4 +14,4 @@ RUN npm i -g npm
 RUN npm ci --only=production --ignore-scripts
 
 USER node
-CMD ["dumb-init", "node", "index.js"]
+CMD ["tini", "--", "npm", "start"]
