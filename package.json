@@ -48,6 +48,6 @@
   },
   "dependencies": {
     "env-var": "^7.1.1",
-    "log4js": "^6.6.1"
+    "log4js": "^6.7.0"
   }
 }
