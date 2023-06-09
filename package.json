@@ -4,6 +4,7 @@
   "description": "A node template project",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run sbom",
     "prepare": "husky install",
     "precommit": "npm run lint:fix && npm run pretty",
     "prepush": "npm run lint",
@@ -11,6 +12,7 @@
     "lint": "eslint src/**/*.ts test/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts",
     "pretty": "prettier --write src/**/*.ts test/**/*.ts",
+    "sbom": "cyclonedx-npm --output-reproducible --output-file bom.json",
     "build": "tsc",
     "start": "node index.js",
     "dev": "ts-node src/index.ts"
@@ -30,6 +32,7 @@
   },
   "homepage": "https://github.com/AstralJaeger/node#readme",
   "devDependencies": {
+    "@cyclonedx/cyclonedx-npm": "1.12.0",
     "@types/jest": "29.0.0",
     "@types/node": "20.0.0",
     "@typescript-eslint/eslint-plugin": "5.33.0",
