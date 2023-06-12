@@ -51,6 +51,6 @@
   },
   "dependencies": {
     "env-var": "7.3.0",
-    "log4js": "6.8.0"
+    "log4js": "6.9.1"
   }
 }
