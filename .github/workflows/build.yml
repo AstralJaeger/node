@@ -23,7 +23,7 @@ jobs:
         run: npm run build
         # Setup QEMU and docker build
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64,amd64
       - name: Setup Buildx
