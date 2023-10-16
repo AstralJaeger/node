@@ -3,14 +3,13 @@ LABEL maintainer="Felix Hillebrand <astraljaeger@pm.me>"
 
 ENV NODE_ENV production
 
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini=0.19.0-r2
 
 WORKDIR /usr/src/app
 
 COPY --chown=node:node package*.json ./
 COPY --chown=node:node dist/src/* ./
 
-RUN npm i -g npm
 RUN npm ci --only=production --ignore-scripts
 
 USER node
