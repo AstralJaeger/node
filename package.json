@@ -1,10 +1,9 @@
 {
   "name": "node",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A node template project",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run sbom",
     "prepare": "husky install",
     "precommit": "npm run lint:fix && npm run pretty",
     "prepush": "npm run lint",
@@ -12,8 +11,9 @@
     "lint": "eslint src/**/*.ts test/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts",
     "pretty": "prettier --write src/**/*.ts test/**/*.ts",
-    "sbom": "cyclonedx-npm --output-reproducible --output-file bom.json",
     "build": "tsc",
+    "postbuild": "npm run sbom",
+    "sbom": "cyclonedx-npm --output-reproducible --output-file ./dist/bom.json",
     "start": "node index.js",
     "dev": "ts-node src/index.ts"
   },
