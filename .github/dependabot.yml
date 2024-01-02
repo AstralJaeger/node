@@ -5,24 +5,27 @@
 
 version: 2
 updates:
-
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     assignees:
       - "AstralJaeger"
     commit-message:
-        prefix: "npm"
+      prefix: "npm"
     open-pull-requests-limit: 5
     versioning-strategy: increase-if-necessary
+    automerged_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
 
   # Maintain dependencies for github actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     assignees:
       - "AstralJaeger"
     commit-message:
@@ -33,7 +36,7 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     assignees:
       - "AstralJaeger"
     commit-message:
