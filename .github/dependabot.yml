@@ -16,10 +16,6 @@ updates:
       prefix: "npm"
     open-pull-requests-limit: 5
     versioning-strategy: increase-if-necessary
-    automerged_updates:
-      - match:
-          dependency_type: "development"
-          update_type: "all"
 
   # Maintain dependencies for github actions
   - package-ecosystem: "github-actions"
