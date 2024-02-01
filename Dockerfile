@@ -1,4 +1,4 @@
-FROM node:lts-alpine@sha256:9e38d3d4117da74a643f67041c83914480b335c3bd44d37ccf5b5ad86cd715d1
+FROM node:lts-alpine@sha256:2f46fd49c767554c089a5eb219115313b72748d8f62f5eccb58ef52bc36db4ad
 LABEL maintainer="Felix Hillebrand <astraljaeger@pm.me>"
 
 HEALTHCHECK NONE
