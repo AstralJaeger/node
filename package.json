@@ -50,7 +50,7 @@
     "typescript": "5.4.5"
   },
   "dependencies": {
-    "env-var": "7.4.1",
+    "env-var": "7.5.0",
     "log4js": "6.9.1"
   }
 }
