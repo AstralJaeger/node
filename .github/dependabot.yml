@@ -5,39 +5,36 @@
 
 version: 2
 updates:
-# Maintain dependencies for npm
-- package-ecosystem: "npm"
-  directory: "/"
-  schedule:
-    # Every day at 16:15 europe/berlin time
-    interval: "daily"
-    time: "16:16"
-    timezone: "Europe/Vienna"
-  assignees:
-  - "AstralJaeger"
-  commit-message:
-    prefix: "npm"
-  open-pull-requests-limit: 5
-  versioning-strategy: increase-if-necessary
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "AstralJaeger"
+    commit-message:
+      prefix: "npm"
+    open-pull-requests-limit: 5
+    versioning-strategy: increase-if-necessary
 
-# Maintain dependencies for github actions
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: "monthly"
-  assignees:
-  - "AstralJaeger"
-  commit-message:
-    prefix: "actions"
-  open-pull-requests-limit: 5
+  # Maintain dependencies for github actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "AstralJaeger"
+    commit-message:
+      prefix: "actions"
+    open-pull-requests-limit: 5
 
-# Maintain dependencies for docker
-- package-ecosystem: "docker"
-  directory: "/"
-  schedule:
-    interval: "monthly"
-  assignees:
-  - "AstralJaeger"
-  commit-message:
-    prefix: "docker"
-  open-pull-requests-limit: 5
+  # Maintain dependencies for docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "AstralJaeger"
+    commit-message:
+      prefix: "docker"
+    open-pull-requests-limit: 5
