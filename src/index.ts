@@ -1,5 +1,6 @@
-import { Environment } from './environment';
 import log4js from "log4js";
+
+import { Environment } from './environment';
 
 log4js.configure({
   appenders: { console: { type: "console" } },

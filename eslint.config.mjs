@@ -1,57 +1,37 @@
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import prettier from "eslint-plugin-prettier";
-import spellcheck from "eslint-plugin-spellcheck";
-import globals from "globals";
-import tsParser from "@typescript-eslint/parser";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+// @ts-check
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
+import eslint from '@eslint/js';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unusedImports from 'eslint-plugin-unused-imports';
+import tseslint from 'typescript-eslint';
 
-export default [{
-    ignores: [
-        "node_modules/*",
-        "dist/*",
-        "build/*",
-        "coverage/*",
-        "**/*.d.ts",
-        "src/public/",
-        "src/types/",
-    ],
-}, ...compat.extends("google", "prettier"), {
-    plugins: {
-        "@typescript-eslint": typescriptEslint,
-        prettier,
-        spellcheck,
+export default tseslint.config(
+    {
+        ignores: ['**/dist/*', '**/tests/*', 'tsconfig.json'],
     },
-
-    languageOptions: {
-        globals: {
-            ...Object.fromEntries(Object.entries(globals.browser).map(([key]) => [key, "off"])),
-            ...globals.node,
-            ...globals.commonjs,
+    eslint.configs.recommended,
+    ...tseslint.configs.recommended,
+    {
+        plugins: {
+            'unused-imports': unusedImports,
+            'simple-import-sort': simpleImportSort,
         },
+        rules: {
+            'simple-import-sort/imports': 'error',
+            'simple-import-sort/exports': 'error',
 
-        parser: tsParser,
-        ecmaVersion: "latest",
-        sourceType: "commonjs",
-
-        parserOptions: {
-            pject: "./tsconfig.json",
+            '@typescript-eslint/no-unused-vars': 'off',
+            'unused-imports/no-unused-imports': 'error',
+            'unused-imports/no-unused-vars': [
+                'warn',
+                {
+                    vars: 'all',
+                    varsIgnorePattern: '^_',
+                    args: 'after-used',
+                    argsIgnorePattern: '^_',
+                },
+            ],
+            '@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'with-single-extends' }],
         },
     },
-
-    rules: {
-        "valid-jsdoc": "off",
-        "prettier/prettier": "warn",
-        "spellcheck/spell-checker": ["warn"],
-    },
-}];
+);
