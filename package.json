@@ -34,7 +34,7 @@
     "@cyclonedx/cyclonedx-npm": "3.0.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.13.16",
-    "@typescript-eslint/eslint-plugin": "8.25.0",
+    "@typescript-eslint/eslint-plugin": "8.32.0",
     "@typescript-eslint/parser": "8.29.0",
     "eslint": "9.21.0",
     "eslint-config-google": "0.14.0",
