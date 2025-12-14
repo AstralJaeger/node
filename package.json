@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/AstralJaeger/node#readme",
   "devDependencies": {
-    "@cyclonedx/cyclonedx-npm": "3.0.0",
+    "@cyclonedx/cyclonedx-npm": "4.1.2",
     "@types/jest": "30.0.0",
     "@types/node": "22.15.29",
     "@typescript-eslint/eslint-plugin": "8.33.1",
