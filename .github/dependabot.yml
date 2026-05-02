@@ -16,6 +16,13 @@ updates:
       prefix: "npm"
     open-pull-requests-limit: 5
     versioning-strategy: increase-if-necessary
+    cooldown:
+      default-days: 7
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
 
   # Maintain dependencies for github actions
   - package-ecosystem: "github-actions"
@@ -27,6 +34,9 @@ updates:
     commit-message:
       prefix: "actions"
     open-pull-requests-limit: 5
+    groups:
+      production-dependencies:
+        dependency-type: "production"
 
   # Maintain dependencies for docker
   - package-ecosystem: "docker"
@@ -38,3 +48,8 @@ updates:
     commit-message:
       prefix: "docker"
     open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
+    groups:
+      production-dependencies:
+        dependency-type: "production"
